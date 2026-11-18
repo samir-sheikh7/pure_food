@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="js/script.js" defer></script>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+    <header class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="h-20 max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between gap-gutter">
+      <div class="flex items-center gap-stack-sm shrink-0">
+        <a href="index.html" class="flex items-center gap-stack-sm" aria-label="Home">
+          <img src="assets/logo/logo-transparent.png" alt="Pure Foods Logo" class="w-[115px] sm:w-[130px] md:w-[210px] lg:w-[230px] h-auto object-contain transition-all duration-300 logo-img">
+        </a>
+      </div>
+      <nav class="hidden md:flex items-center gap-stack-lg" aria-label="Main Navigation">
+        <a class="nav-link transition-colors duration-300 py-2 text-white/80 hover:text-primary font-medium border-b-2 border-transparent" href="index.html">Home</a>
+        <div class="relative group dropdown">
+          <a href="about.html" aria-expanded="false" aria-haspopup="true" class="nav-link flex items-center gap-1 text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent">
+            About Us <span class="material-symbols-outlined text-[18px] group-hover:-rotate-180 transition-transform duration-300" aria-hidden="true">expand_more</span>
+          </a>
+          <!-- Bridging gap for hover -->
+          <div class="absolute top-full left-0 w-48 pt-2 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black/90 shadow-xl border-white/10 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 dropdown-menu py-stack-sm border border-white/20/30">
+              <a class="block px-stack-md py-2 text-label-lg text-white/80 hover:bg-white/10 hover:text-primary transition-colors duration-300" href="quality.html">Quality</a>
+              <a class="block px-stack-md py-2 text-label-lg text-white/80 hover:bg-white/10 hover:text-primary transition-colors duration-300" href="sustainability.html">Sustainability</a>
+              <a class="block px-stack-md py-2 text-label-lg text-white/80 hover:bg-white/10 hover:text-primary transition-colors duration-300" href="social-responsibility.html">Social Responsibility</a>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent" href="products.html">Products</a>
+        <a class="nav-link text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent" href="certificates.html">Certificates</a>
+        <a class="nav-link text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent" href="contact.html">Contact Us</a>
+      </nav>
+      <div class="flex items-center gap-stack-md">
+        <div class="hidden xl:flex flex-col items-end border-r border-outline-variant pr-stack-md">
+          <span class="export-support-label">Export Support</span>
+          <span class="export-support-number">+91 123 456 7890</span>
+        </div>
+        <button class="p-2 hover:bg-white/10 rounded-full transition-colors hidden md:block" aria-label="Search">
+          <span class="material-symbols-outlined text-white/80" aria-hidden="true">search</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" aria-expanded="false" class="md:hidden p-1 transition-opacity" aria-label="Toggle Mobile Menu">
+          <span class="material-symbols-outlined text-white/80" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-white/10 px-margin-mobile py-stack-md shadow-xl absolute w-full left-0 top-20">
+      <div class="flex flex-col gap-4">
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+        <div class="flex flex-col">
+          <div class="flex items-center justify-between">
+            <a href="about.html" class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300 flex-1">About Us</a>
+            <button class="mobile-dropdown-btn p-2 text-white/80" aria-expanded="false" aria-label="Toggle About Submenu">
+              <span class="material-symbols-outlined transition-transform duration-300" aria-hidden="true">expand_more</span>
+            </button>
+          </div>
+          <div class="mobile-dropdown-menu hidden flex-col pl-4 mt-2 gap-3 border-l border-white/20">
+            <a class="mobile-nav-link text-label-lg text-white/60 hover:text-primary transition-colors duration-300" href="quality.html">Quality</a>
+            <a class="mobile-nav-link text-label-lg text-white/60 hover:text-primary transition-colors duration-300" href="sustainability.html">Sustainability</a>
+            <a class="mobile-nav-link text-label-lg text-white/60 hover:text-primary transition-colors duration-300" href="social-responsibility.html">Social Responsibility</a>
+          </div>
+        </div>
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="products.html">Products</a>
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="certificates.html">Certificates</a>
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </header>
+<main class="w-full pt-20 bg-surface">
+<div class="flex flex-col w-full">
+<section class="relative w-full py-stack-lg bg-surface-container overflow-hidden">
+<div class="absolute inset-0 bg-deep-forest/5 mix-blend-multiply"></div>
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-stack-lg pt-margin-desktop pb-stack-lg">
+<div class="max-w-2xl">
+<span class="inline-block mb-stack-sm text-label-lg font-label-lg text-primary tracking-widest uppercase">Export Grade Ingredients</span>
+<h1 class="text-headline-xl font-headline-xl text-on-surface mb-stack-md">Our Range of Products</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                        Sustainably sourced, precision-processed ingredients meeting global manufacturing standards for purity, flavor profile, and consistency.
+                    </p>
+</div>
+<div class="flex gap-stack-sm bg-surface rounded-full p-2 shadow-sm border border-outline-variant/20">
+<button class="px-6 py-2 rounded-full bg-deep-forest text-on-primary text-label-lg font-label-lg transition-transform hover:scale-105 shadow-md">Catalog</button>
+<button class="px-6 py-2 rounded-full text-on-surface hover:bg-surface-container transition-colors text-label-lg font-label-lg">Specs</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Subtle Botanical Section Divider -->
+<div class="section-divider" aria-hidden="true">
+  <span class="section-divider-line section-divider-line-left"></span>
+  <span class="section-divider-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C6.5 2 3 6.5 3 12c0 4 2.5 7.5 6 9l3 1 3-1c3.5-1.5 6-5 6-9 0-5.5-3.5-10-9-10z"></path>
+      <path d="M12 2v20"></path>
+      <path d="M12 7c2.5 1.5 4.5 3.5 5 6"></path>
+      <path d="M12 11c-2.5 1.5-4.5 3.5-5 6"></path>
+      <path d="M12 15c2 1 3.5 2.5 4 4"></path>
+    </svg>
+  </span>
+  <span class="section-divider-line section-divider-line-right"></span>
+</div>
+
+<section class="w-full bg-surface py-stack-lg relative overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<aside class="w-full lg:w-1/4 shrink-0">
+<div class="sticky top-[100px] bg-surface-container-low rounded-xl p-stack-md shadow-sm">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-stack-md">Categories</h3>
+<div class="flex flex-col gap-2">
+<button class="text-left w-full px-4 py-3 rounded-lg bg-surface text-primary font-bold shadow-sm transition-all flex items-center justify-between border-l-4 border-primary">
+<span class="text-body-md font-body-md">All Products</span>
+<span class="text-body-md font-body-md bg-primary-container/20 text-primary px-2 py-0.5 rounded-full text-xs">124</span>
+</button>
+<button class="text-left w-full px-4 py-3 rounded-lg text-on-surface hover:bg-surface hover:shadow-sm transition-all flex items-center justify-between group">
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors">Dehydrated Onion</span>
+<span class="text-body-md font-body-md text-on-surface-variant text-xs">28</span>
+</button>
+<button class="text-left w-full px-4 py-3 rounded-lg text-on-surface hover:bg-surface hover:shadow-sm transition-all flex items-center justify-between group">
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors">Dehydrated Garlic</span>
+<span class="text-body-md font-body-md text-on-surface-variant text-xs">15</span>
+</button>
+<button class="text-left w-full px-4 py-3 rounded-lg text-on-surface hover:bg-surface hover:shadow-sm transition-all flex items-center justify-between group">
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors">Fried Onion</span>
+<span class="text-body-md font-body-md text-on-surface-variant text-xs">8</span>
+</button>
+<button class="text-left w-full px-4 py-3 rounded-lg text-on-surface hover:bg-surface hover:shadow-sm transition-all flex items-center justify-between group">
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors">Dehydrated Vegetables</span>
+<span class="text-body-md font-body-md text-on-surface-variant text-xs">42</span>
+</button>
+<button class="text-left w-full px-4 py-3 rounded-lg text-on-surface hover:bg-surface hover:shadow-sm transition-all flex items-center justify-between group">
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors">Spices & Masala</span>
+<span class="text-body-md font-body-md text-on-surface-variant text-xs">19</span>
+</button>
+<button class="text-left w-full px-4 py-3 rounded-lg text-on-surface hover:bg-surface hover:shadow-sm transition-all flex items-center justify-between group">
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors">Spray Dried Powder</span>
+<span class="text-body-md font-body-md text-on-surface-variant text-xs">12</span>
+</button>
+</div>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-stack-md pb-stack-sm border-b border-outline-variant/30">
+<p class="text-body-md font-body-md text-on-surface-variant">Showing <span class="font-bold text-on-surface">1-12</span> of 124 products</p>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors bg-surface-container rounded-lg"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors bg-surface rounded-lg"><span class="material-symbols-outlined">view_list</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<article class="group bg-surface-container-lowest rounded-[16px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-surface/90 backdrop-blur-sm text-deep-forest text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Best Seller</span>
+</div>
+<div class="h-48 w-full relative bg-surface-variant flex items-center justify-center p-6 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply z-10"></div>
+<img class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700 ease-in-out shadow-inner" data-alt="Close up photography of premium dehydrated white onion flakes, crisp texture, natural cream color, studio lighting, top down view, professional food photography" src="assets/images/image-21.jpg"/>
+</div>
+<div class="p-stack-md flex flex-col flex-1">
+<div class="text-[12px] font-label-lg text-primary tracking-wider uppercase mb-1">Dehydrated Onion</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2 line-clamp-1">White Onion Flakes</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md">Premium grade, machine-dried white onion flakes retaining strong pungent flavor. Ideal for soups and sauces.</p>
+<div class="mt-auto space-y-2 mb-stack-md border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Moisture:</span>
+<span class="text-on-surface font-bold font-body-md">Max 6%</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Origin:</span>
+<span class="text-on-surface font-bold font-body-md">India</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group bg-surface-container-lowest rounded-[16px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
+<div class="h-48 w-full relative bg-surface-variant flex items-center justify-center p-6 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply z-10"></div>
+<img class="w-full h-full object-cover rounded-[30%] group-hover:rotate-3 transition-transform duration-700 ease-in-out shadow-inner" data-alt="High quality dehydrated garlic cloves, golden cream hue, distinct texture, piled neatly, dramatic side lighting, culinary ingredient style" src="assets/images/image-22.jpg"/>
+</div>
+<div class="p-stack-md flex flex-col flex-1">
+<div class="text-[12px] font-label-lg text-primary tracking-wider uppercase mb-1">Dehydrated Garlic</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2 line-clamp-1">Garlic Cloves (A-Grade)</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md">Intensely aromatic dehydrated garlic cloves. Sourced from high-yield non-GMO farms.</p>
+<div class="mt-auto space-y-2 mb-stack-md border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Aroma:</span>
+<span class="text-on-surface font-bold font-body-md">Strong/Pungent</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Size:</span>
+<span class="text-on-surface font-bold font-body-md">5-10mm</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group bg-surface-container-lowest rounded-[16px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-accent-gold/20 backdrop-blur-sm text-accent-gold border border-accent-gold/50 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Premium</span>
+</div>
+<div class="h-48 w-full relative bg-surface-variant flex items-center justify-center p-6 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply z-10"></div>
+<img class="w-full h-full object-cover rounded-[16px] group-hover:scale-110 transition-transform duration-700 ease-in-out shadow-inner" data-alt="Crispy golden fried onions (Birista), scattered organically on a slate background, warm lighting emphasizing texture, culinary macro photography" src="assets/images/image-23.jpg"/>
+</div>
+<div class="p-stack-md flex flex-col flex-1">
+<div class="text-[12px] font-label-lg text-primary tracking-wider uppercase mb-1">Fried Onion</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2 line-clamp-1">Crispy Fried Onion</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md">Golden-brown, perfectly crisp fried onions. Processed using high-quality palm olein oil.</p>
+<div class="mt-auto space-y-2 mb-stack-md border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Oil Type:</span>
+<span class="text-on-surface font-bold font-body-md">Palm Olein</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Shelf Life:</span>
+<span class="text-on-surface font-bold font-body-md">12 Months</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group bg-surface-container-lowest rounded-[16px] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
+<div class="h-48 w-full relative bg-surface-variant flex items-center justify-center p-6 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply z-10"></div>
+<img class="w-[80%] h-[80%] object-cover rounded-full group-hover:scale-105 transition-transform duration-700 ease-in-out shadow-lg shadow-error/20" data-alt="Vibrant red tomato powder in a small wooden bowl, fine texture, scattered slightly on a textured surface, bright natural light, spice market aesthetic" src="assets/images/image-24.jpg"/>
+</div>
+<div class="p-stack-md flex flex-col flex-1">
+<div class="text-[12px] font-label-lg text-primary tracking-wider uppercase mb-1">Spray Dried Powder</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2 line-clamp-1">Tomato Powder</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md">Rich, spray-dried tomato powder. Dissolves instantly, offering authentic tanginess for soups and seasoning.</p>
+<div class="mt-auto space-y-2 mb-stack-md border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Solubility:</span>
+<span class="text-on-surface font-bold font-body-md">100% Water Soluble</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-body-md">Color:</span>
+<span class="text-on-surface font-bold font-body-md">Bright Red</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+<div class="mt-stack-lg flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold shadow-sm">1</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">2</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">11</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+    <footer class="w-full bg-deep-forest text-on-primary py-stack-lg mt-stack-lg">
+    <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter mb-stack-lg">
+        <div class="col-span-1 md:col-span-1 flex flex-col items-start">
+          <a href="index.html" class="mb-4 inline-block" aria-label="Pure Foods Logo">
+            <img alt="Pure Foods Logo" class="h-10 md:h-12 w-auto object-contain brightness-110" src="assets/logo/logo-transparent.png">
+          </a>
+          <p class="text-body-md text-on-primary/70 max-w-xs">Export-grade ingredients sourced sustainably for the global food industry.</p>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-label-lg text-label-lg text-accent-gold mb-stack-md uppercase tracking-widest">Quick Links</h4>
+          <ul class="flex flex-col gap-2.5">
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="products.html">Products</a></li>
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="certificates.html">Quality Standards</a></li>
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="about.html">Global Presence</a></li>
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="about.html#sustainability">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label-lg text-label-lg text-accent-gold mb-stack-md uppercase tracking-widest">Contact</h4>
+          <ul class="flex flex-col gap-2.5">
+            <li class="text-body-md text-on-primary/80 flex items-center gap-2 py-1"><span class="material-symbols-outlined text-[18px]">location_on</span> Mumbai, India</li>
+            <li class="text-body-md text-on-primary/80 flex items-center gap-2 py-1"><span class="material-symbols-outlined text-[18px]">mail</span> info@purefoods.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label-lg text-label-lg text-accent-gold mb-stack-md uppercase tracking-widest">Newsletter</h4>
+          <div class="flex gap-2 mt-2">
+            <input class="bg-white/10 rounded-lg px-4 py-2 w-full text-body-md outline-none focus:ring-1 focus:ring-fresh-leaf text-on-primary" placeholder="Email address" type="email">
+            <button class="bg-fresh-leaf text-on-primary px-4 py-2 rounded-lg font-label-lg hover:opacity-90 transition-opacity shrink-0">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="pt-stack-md border-t border-white/10 text-center text-[12px] text-on-primary/40 tracking-wider uppercase">© 2024 Pure Foods Ingredients Pvt. Ltd. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top" class="back-to-top-btn" title="Back to Top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+</body>
+</html>

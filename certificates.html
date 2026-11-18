@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="js/script.js" defer></script>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+    <header class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="h-20 max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between gap-gutter">
+      <div class="flex items-center gap-stack-sm shrink-0">
+        <a href="index.html" class="flex items-center gap-stack-sm" aria-label="Home">
+          <img src="assets/logo/logo-transparent.png" alt="Pure Foods Logo" class="w-[115px] sm:w-[130px] md:w-[210px] lg:w-[230px] h-auto object-contain transition-all duration-300 logo-img">
+        </a>
+      </div>
+      <nav class="hidden md:flex items-center gap-stack-lg" aria-label="Main Navigation">
+        <a class="nav-link transition-colors duration-300 py-2 text-white/80 hover:text-primary font-medium border-b-2 border-transparent" href="index.html">Home</a>
+        <div class="relative group dropdown">
+          <a href="about.html" aria-expanded="false" aria-haspopup="true" class="nav-link flex items-center gap-1 text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent">
+            About Us <span class="material-symbols-outlined text-[18px] group-hover:-rotate-180 transition-transform duration-300" aria-hidden="true">expand_more</span>
+          </a>
+          <!-- Bridging gap for hover -->
+          <div class="absolute top-full left-0 w-48 pt-2 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-black/90 shadow-xl border-white/10 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 dropdown-menu py-stack-sm border border-white/20/30">
+              <a class="block px-stack-md py-2 text-label-lg text-white/80 hover:bg-white/10 hover:text-primary transition-colors duration-300" href="quality.html">Quality</a>
+              <a class="block px-stack-md py-2 text-label-lg text-white/80 hover:bg-white/10 hover:text-primary transition-colors duration-300" href="sustainability.html">Sustainability</a>
+              <a class="block px-stack-md py-2 text-label-lg text-white/80 hover:bg-white/10 hover:text-primary transition-colors duration-300" href="social-responsibility.html">Social Responsibility</a>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent" href="products.html">Products</a>
+        <a class="nav-link text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent" href="certificates.html">Certificates</a>
+        <a class="nav-link text-label-lg font-label-lg text-white/80 hover:text-primary transition-colors duration-300 py-2 border-b-2 border-transparent" href="contact.html">Contact Us</a>
+      </nav>
+      <div class="flex items-center gap-stack-md">
+        <div class="hidden xl:flex flex-col items-end border-r border-outline-variant pr-stack-md">
+          <span class="export-support-label">Export Support</span>
+          <span class="export-support-number">+91 123 456 7890</span>
+        </div>
+        <button class="p-2 hover:bg-white/10 rounded-full transition-colors hidden md:block" aria-label="Search">
+          <span class="material-symbols-outlined text-white/80" aria-hidden="true">search</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" aria-expanded="false" class="md:hidden p-1 transition-opacity" aria-label="Toggle Mobile Menu">
+          <span class="material-symbols-outlined text-white/80" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-white/10 px-margin-mobile py-stack-md shadow-xl absolute w-full left-0 top-20">
+      <div class="flex flex-col gap-4">
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+        <div class="flex flex-col">
+          <div class="flex items-center justify-between">
+            <a href="about.html" class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300 flex-1">About Us</a>
+            <button class="mobile-dropdown-btn p-2 text-white/80" aria-expanded="false" aria-label="Toggle About Submenu">
+              <span class="material-symbols-outlined transition-transform duration-300" aria-hidden="true">expand_more</span>
+            </button>
+          </div>
+          <div class="mobile-dropdown-menu hidden flex-col pl-4 mt-2 gap-3 border-l border-white/20">
+            <a class="mobile-nav-link text-label-lg text-white/60 hover:text-primary transition-colors duration-300" href="quality.html">Quality</a>
+            <a class="mobile-nav-link text-label-lg text-white/60 hover:text-primary transition-colors duration-300" href="sustainability.html">Sustainability</a>
+            <a class="mobile-nav-link text-label-lg text-white/60 hover:text-primary transition-colors duration-300" href="social-responsibility.html">Social Responsibility</a>
+          </div>
+        </div>
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="products.html">Products</a>
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="certificates.html">Certificates</a>
+        <a class="mobile-nav-link font-label-lg text-label-lg text-white/80 hover:text-primary transition-colors duration-300" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </header>
+<main class="w-full pt-20 bg-surface">
+<div class="flex flex-col w-full">
+<!-- Hero Section (Dark Mode) -->
+<section class="relative bg-deep-forest text-on-primary py-margin-desktop overflow-hidden rounded-b-3xl shadow-xl">
+<!-- Ambient Background Elements -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-fixed rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-12 w-64 h-64 bg-fresh-leaf rounded-full blur-[80px]"></div>
+</div>
+<div class="relative max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop z-10 flex flex-col items-center text-center pt-8">
+<span class="font-label-lg text-label-lg text-accent-gold uppercase tracking-[0.2em] mb-stack-md block">Quality Assurance</span>
+<h1 class="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-on-primary mb-stack-md max-w-3xl leading-tight">
+        Certified for Global Trust
+      </h1>
+<p class="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">
+        Our quality and export standards are verified by leading international and national authorities, ensuring every batch meets the highest global benchmarks.
+      </p>
+</div>
+</section>
+
+<!-- Subtle Botanical Section Divider -->
+<div class="section-divider" aria-hidden="true">
+  <span class="section-divider-line section-divider-line-left"></span>
+  <span class="section-divider-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C6.5 2 3 6.5 3 12c0 4 2.5 7.5 6 9l3 1 3-1c3.5-1.5 6-5 6-9 0-5.5-3.5-10-9-10z"></path>
+      <path d="M12 2v20"></path>
+      <path d="M12 7c2.5 1.5 4.5 3.5 5 6"></path>
+      <path d="M12 11c-2.5 1.5-4.5 3.5-5 6"></path>
+      <path d="M12 15c2 1 3.5 2.5 4 4"></path>
+    </svg>
+  </span>
+  <span class="section-divider-line section-divider-line-right"></span>
+</div>
+
+<!-- Certifications Grid -->
+<section class="py-margin-desktop bg-surface relative z-0 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter lg:gap-stack-lg">
+<!-- Cert Card 1 -->
+<div class="bg-surface-container rounded-2xl p-gutter shadow-sm hover:shadow-md transition-shadow flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="h-20 mb-stack-md flex items-center justify-center">
+<img alt="ISO 9001 Logo" class="h-full max-h-16 w-auto object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" src="assets/client-logo/1.png"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-primary transition-colors">ISO 9001:2015 (URS / UKAS)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-stack-lg">
+            Certified for quality management systems in processing and export of dehydrated ingredients, ensuring consistent quality and customer satisfaction.
+          </p>
+<div class="mt-auto">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg py-3 px-6 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2 group/btn">
+               View Certificate
+               <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Cert Card 2 -->
+<div class="bg-surface-container rounded-2xl p-gutter shadow-sm hover:shadow-md transition-shadow flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="h-20 mb-stack-md flex items-center justify-center">
+<img alt="Spices Board India Logo" class="h-full max-h-16 w-auto object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" src="assets/client-logo/5.png"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-primary transition-colors">Spices Board India Registration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-stack-lg">
+            Mandatory certification for the export of premium Indian spices and blends, guaranteeing authenticity and adherence to national export standards.
+          </p>
+<div class="mt-auto">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg py-3 px-6 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2 group/btn">
+               View Certificate
+               <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Cert Card 3 -->
+<div class="bg-surface-container rounded-2xl p-gutter shadow-sm hover:shadow-md transition-shadow flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="h-20 mb-stack-md flex items-center justify-center">
+<img alt="APEDA Logo" class="h-full max-h-16 w-auto object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" src="assets/client-logo/2.png"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-primary transition-colors">APEDA Registered Exporter</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-stack-lg">
+            Verification of high standards in the export of agricultural and processed food products by the Agricultural and Processed Food Products Export Development Authority.
+          </p>
+<div class="mt-auto">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg py-3 px-6 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2 group/btn">
+               View Certificate
+               <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Cert Card 4 -->
+<div class="bg-surface-container rounded-2xl p-gutter shadow-sm hover:shadow-md transition-shadow flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="h-20 mb-stack-md flex items-center justify-center">
+<img alt="FSSAI Logo" class="h-full max-h-16 w-auto object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" src="assets/client-logo/3.png"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-primary transition-colors">FSSAI License</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-stack-lg">
+            Adherence to stringent food safety and hygiene standards regulated by the Government of India, ensuring all products are safe for human consumption.
+          </p>
+<div class="mt-auto">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg py-3 px-6 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2 group/btn">
+               View Certificate
+               <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Cert Card 5 (Spans full width on desktop if odd number, or just sits in grid) -->
+<div class="bg-surface-container rounded-2xl p-gutter shadow-sm hover:shadow-md transition-shadow flex flex-col h-full group md:col-span-2 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-center h-full">
+<div class="h-32 md:h-full md:border-r border-outline-variant/30 flex items-center justify-center p-stack-md">
+<img alt="US FDA Logo" class="max-h-20 max-w-[200px] object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" src="assets/client-logo/4.png"/>
+</div>
+<div class="md:col-span-2 flex flex-col justify-center py-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm group-hover:text-primary transition-colors">US FDA Registered Facility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg max-w-2xl">
+                Compliance with US Food and Drug Administration requirements for food facilities exporting to the USA, demonstrating our commitment to international safety protocols.
+              </p>
+<div>
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg py-3 px-6 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2 group/btn w-fit">
+                   View Certificate
+                   <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Subtle Botanical Section Divider -->
+<div class="section-divider" aria-hidden="true">
+  <span class="section-divider-line section-divider-line-left"></span>
+  <span class="section-divider-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C6.5 2 3 6.5 3 12c0 4 2.5 7.5 6 9l3 1 3-1c3.5-1.5 6-5 6-9 0-5.5-3.5-10-9-10z"></path>
+      <path d="M12 2v20"></path>
+      <path d="M12 7c2.5 1.5 4.5 3.5 5 6"></path>
+      <path d="M12 11c-2.5 1.5-4.5 3.5-5 6"></path>
+      <path d="M12 15c2 1 3.5 2.5 4 4"></path>
+    </svg>
+  </span>
+  <span class="section-divider-line section-divider-line-right"></span>
+</div>
+
+<!-- CTA Section -->
+<section class="py-margin-desktop bg-surface-container-low relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center">
+<div class="bg-deep-forest text-on-primary rounded-3xl p-margin-desktop shadow-2xl relative overflow-hidden">
+<div class="absolute -top-10 -right-10 text-white/5 w-64 h-64">
+<span class="material-symbols-outlined text-[256px]">verified</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-stack-md relative z-10">
+            Have questions about our compliance standards?
+          </h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-stack-lg max-w-xl mx-auto relative z-10">
+            Our export and quality assurance teams are available to provide detailed documentation and answer any specific regulatory queries.
+          </p>
+<button class="bg-accent-gold hover:bg-white text-deep-forest font-label-lg text-label-lg py-4 px-8 rounded-full transition-all shadow-md hover:shadow-xl relative z-10 inline-flex items-center gap-2 font-medium">
+            Contact Our Export Team
+            <span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+    <footer class="w-full bg-deep-forest text-on-primary py-stack-lg mt-stack-lg">
+    <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter mb-stack-lg">
+        <div class="col-span-1 md:col-span-1 flex flex-col items-start">
+          <a href="index.html" class="mb-4 inline-block" aria-label="Pure Foods Logo">
+            <img alt="Pure Foods Logo" class="h-10 md:h-12 w-auto object-contain brightness-110" src="assets/logo/logo-transparent.png">
+          </a>
+          <p class="text-body-md text-on-primary/70 max-w-xs">Export-grade ingredients sourced sustainably for the global food industry.</p>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-label-lg text-label-lg text-accent-gold mb-stack-md uppercase tracking-widest">Quick Links</h4>
+          <ul class="flex flex-col gap-2.5">
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="products.html">Products</a></li>
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="certificates.html">Quality Standards</a></li>
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="about.html">Global Presence</a></li>
+            <li><a class="text-body-md text-on-primary/80 hover:text-fresh-leaf transition-colors block py-1" href="about.html#sustainability">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label-lg text-label-lg text-accent-gold mb-stack-md uppercase tracking-widest">Contact</h4>
+          <ul class="flex flex-col gap-2.5">
+            <li class="text-body-md text-on-primary/80 flex items-center gap-2 py-1"><span class="material-symbols-outlined text-[18px]">location_on</span> Mumbai, India</li>
+            <li class="text-body-md text-on-primary/80 flex items-center gap-2 py-1"><span class="material-symbols-outlined text-[18px]">mail</span> info@purefoods.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label-lg text-label-lg text-accent-gold mb-stack-md uppercase tracking-widest">Newsletter</h4>
+          <div class="flex gap-2 mt-2">
+            <input class="bg-white/10 rounded-lg px-4 py-2 w-full text-body-md outline-none focus:ring-1 focus:ring-fresh-leaf text-on-primary" placeholder="Email address" type="email">
+            <button class="bg-fresh-leaf text-on-primary px-4 py-2 rounded-lg font-label-lg hover:opacity-90 transition-opacity shrink-0">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="pt-stack-md border-t border-white/10 text-center text-[12px] text-on-primary/40 tracking-wider uppercase">© 2024 Pure Foods Ingredients Pvt. Ltd. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top" class="back-to-top-btn" title="Back to Top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+</body>
+</html>
